@@ -3,6 +3,7 @@ import 'package:mess_app/utils/app_config.dart';
 import 'package:mess_app/utils/fade_route_builder.dart';
 import 'package:mess_app/views/home_page.dart';
 import 'package:mess_app/views/persistent_navbar.dart';
+import 'package:mess_app/views/login_screen.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -26,10 +27,7 @@ class _LandingPageState extends State<LandingPage> {
                 padding: const EdgeInsets.all(15.0),
                 child: Text(
                   "The Mess App",
-                  style: TextStyle(
-                      color: AppConfig.primColor,
-                      fontSize: 42,
-                      fontWeight: FontWeight.w800),
+                  style: AppConfig.appTitleStyle,
                 ),
               ),
             ],
@@ -46,8 +44,10 @@ class _LandingPageState extends State<LandingPage> {
           ),
           FloatingActionButton(
             onPressed: () {
+              // Navigator.of(context)
+              //     .push(FadeRouteBuilder(page: const NavBar()));
               Navigator.of(context)
-                  .push(FadeRouteBuilder(page: const NavBar()));
+                  .push(FadeRouteBuilder(page: const LoginScreen()));
             },
             backgroundColor: AppConfig.primColor,
             child: Icon(
